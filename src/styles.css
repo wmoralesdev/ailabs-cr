@@ -186,10 +186,10 @@
     --shadow-color-strong: color-mix(in srgb, black 55%, transparent);
     --shadow-glow: color-mix(in srgb, var(--brand-purple) 24%, transparent);
 
-    --deck-wash-violet: color-mix(in srgb, var(--brand-purple) 34%, transparent);
-    --deck-wash-teal: color-mix(in srgb, #5eb7b0 22%, transparent);
-    --deck-wash-amber: color-mix(in srgb, #e0a36a 16%, transparent);
-    --deck-wash-rose: color-mix(in srgb, #d4a0c2 16%, transparent);
+    --deck-wash-violet: color-mix(in srgb, var(--brand-purple) 48%, transparent);
+    --deck-wash-teal: color-mix(in srgb, #5eb7b0 32%, transparent);
+    --deck-wash-amber: color-mix(in srgb, #e0a36a 26%, transparent);
+    --deck-wash-rose: color-mix(in srgb, #d4a0c2 24%, transparent);
 }
 
 @layer base {
@@ -418,14 +418,26 @@
         margin-top: 1.2em;
     }
 
-    .deck-body :where(ul, ol) {
+    .deck-body :where(ul) {
+        list-style: disc;
         display: grid;
         gap: 0.7em;
-        padding-left: 1.15em;
+        padding-left: 1.2em;
+    }
+
+    .deck-body :where(ol) {
+        list-style: decimal;
+        display: grid;
+        gap: 0.7em;
+        padding-left: 1.2em;
     }
 
     .deck-body :where(li) {
-        padding-left: 0.15em;
+        padding-left: 0.2em;
+    }
+
+    .deck-body :where(li::marker) {
+        color: color-mix(in srgb, var(--foreground) 45%, transparent);
     }
 
     .deck-footer {
