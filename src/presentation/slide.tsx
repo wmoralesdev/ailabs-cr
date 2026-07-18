@@ -25,10 +25,7 @@ export function Slide({
         className
       )}
     >
-      <div aria-hidden className="deck-gradient pointer-events-none absolute inset-0">
-        <div className="absolute -top-[30%] -right-[12%] size-[52%] rounded-full bg-purple/25 blur-3xl" />
-        <div className="absolute -bottom-[35%] -left-[10%] size-[48%] rounded-full bg-lavender/20 blur-3xl dark:bg-lavender/10" />
-      </div>
+      <div aria-hidden className="deck-gradient pointer-events-none absolute inset-0" />
       {children}
     </section>
   )
@@ -52,7 +49,7 @@ export function SlideMain({
   ...props
 }: ComponentProps<"div">) {
   return (
-    <div className={cn("deck-main relative z-10", className)} {...props}>
+    <div className={cn("deck-main relative z-10 min-h-0", className)} {...props}>
       {children}
     </div>
   )
@@ -66,7 +63,7 @@ export function SlideFooter({
   return (
     <footer
       className={cn(
-        "deck-footer relative z-10 flex items-end justify-between gap-[2cqw] text-muted-foreground",
+        "deck-footer relative z-10 mt-auto flex items-end justify-between gap-[2cqw] text-muted-foreground",
         className
       )}
       {...props}

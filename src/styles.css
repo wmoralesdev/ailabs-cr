@@ -79,6 +79,12 @@
     --brand-border: #e8e4f0;
     --brand-border-dark: #44414f;
 
+    /* Deck atmosphere */
+    --deck-wash-violet: color-mix(in srgb, var(--brand-purple) 42%, transparent);
+    --deck-wash-teal: color-mix(in srgb, #5eb7b0 28%, transparent);
+    --deck-wash-amber: color-mix(in srgb, #e0a36a 22%, transparent);
+    --deck-wash-rose: color-mix(in srgb, #d4a0c2 20%, transparent);
+
     /* Spacing / layout */
     --space-section-y: 4rem;
     --space-gutter: 1.5rem;
@@ -179,6 +185,11 @@
     --shadow-color: color-mix(in srgb, black 40%, transparent);
     --shadow-color-strong: color-mix(in srgb, black 55%, transparent);
     --shadow-glow: color-mix(in srgb, var(--brand-purple) 24%, transparent);
+
+    --deck-wash-violet: color-mix(in srgb, var(--brand-purple) 34%, transparent);
+    --deck-wash-teal: color-mix(in srgb, #5eb7b0 22%, transparent);
+    --deck-wash-amber: color-mix(in srgb, #e0a36a 16%, transparent);
+    --deck-wash-rose: color-mix(in srgb, #d4a0c2 16%, transparent);
 }
 
 @layer base {
@@ -336,6 +347,30 @@
         padding-block: 7cqh;
     }
 
+    .deck-gradient {
+        background:
+            radial-gradient(
+                58% 48% at 88% 8%,
+                var(--deck-wash-violet) 0%,
+                transparent 68%
+            ),
+            radial-gradient(
+                46% 42% at 8% 86%,
+                var(--deck-wash-teal) 0%,
+                transparent 70%
+            ),
+            radial-gradient(
+                42% 38% at 72% 78%,
+                var(--deck-wash-amber) 0%,
+                transparent 72%
+            ),
+            radial-gradient(
+                36% 34% at 28% 18%,
+                var(--deck-wash-rose) 0%,
+                transparent 70%
+            );
+    }
+
     .deck-kicker {
         font-family: var(--font-sans);
         font-size: 1.35cqw;
@@ -348,11 +383,11 @@
 
     /* Title slide: one large statement. Content slide: shorter band title. */
     .deck-slide[data-variant="title"] .deck-title {
-        font-size: 5.4cqw;
+        font-size: 5.2cqw;
         font-weight: 600;
         letter-spacing: -0.03em;
         line-height: 0.98;
-        max-width: 14ch;
+        max-width: 18ch;
     }
 
     .deck-slide[data-variant="content"] .deck-title {
@@ -385,8 +420,12 @@
 
     .deck-body :where(ul, ol) {
         display: grid;
-        gap: 0.55em;
-        padding-left: 1.1em;
+        gap: 0.7em;
+        padding-left: 1.15em;
+    }
+
+    .deck-body :where(li) {
+        padding-left: 0.15em;
     }
 
     .deck-footer {
