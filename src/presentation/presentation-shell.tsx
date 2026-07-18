@@ -8,7 +8,6 @@ import {
 
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 
 type PresentationShellProps = {
   slides: ReactNode[]
@@ -44,6 +43,8 @@ export function PresentationShell({ slides }: PresentationShellProps) {
 
     await root.requestFullscreen()
   }
+
+  // isFullscreen kept for the expand/shrink icon only
 
   useEffect(() => {
     const goNext = () => {
@@ -88,54 +89,33 @@ export function PresentationShell({ slides }: PresentationShellProps) {
   return (
     <div
       ref={rootRef}
-      className={cn(
-        "relative flex h-svh w-full flex-col overflow-hidden bg-muted",
-        isFullscreen && "bg-background"
-      )}
+      className="relative flex h-svh w-full items-center justify-center overflow-hidden bg-background"
     >
-      <div className="flex min-h-0 flex-1 items-center justify-center p-3 md:p-5">
-        <div
-          className={cn(
-            "relative aspect-video h-auto max-h-full w-full overflow-hidden bg-background shadow-panel",
-            "max-w-[min(100%,calc((100svh-4.5rem)*16/9))]",
-            isFullscreen && "max-w-[min(100vw,calc(100vh*16/9))] shadow-none"
-          )}
-          data-slide-index={index}
-          data-slide-total={total}
-        >
-          {current}
-        </div>
+      <div
+        className="relative h-[min(100svh,calc(100vw*9/16))] w-[min(100vw,calc(100svh*16/9))] overflow-hidden bg-background"
+        data-slide-index={index}
+        data-slide-total={total}
+      >
+        {current}
       </div>
 
-      <div
-        className={cn(
-          "flex shrink-0 items-center justify-between gap-3 px-4 py-2",
-          isFullscreen &&
-            "absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/70 to-transparent pb-4"
-        )}
-      >
-        <p className="font-sans text-xs text-muted-foreground">
-          {total > 0 ? `${index + 1} / ${total}` : "0 / 0"}
-        </p>
-
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <Button
-            type="button"
-            variant="outline"
-            size="icon"
-            aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-            className="bg-background shadow-soft"
-            onClick={() => {
-              void toggleFullscreen()
-            }}
-          >
-            <HugeiconsIcon
-              icon={isFullscreen ? ArrowShrinkIcon : ArrowExpandIcon}
-              strokeWidth={2}
-            />
-          </Button>
-        </div>
+      <div className="absolute right-4 bottom-4 flex items-center gap-2">
+        <ThemeToggle />
+        <Button
+          type="button"
+          variant="outline"
+          size="icon"
+          aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+          className="bg-background/90 shadow-soft backdrop-blur-sm"
+          onClick={() => {
+            void toggleFullscreen()
+          }}
+        >
+          <HugeiconsIcon
+            icon={isFullscreen ? ArrowShrinkIcon : ArrowExpandIcon}
+            strokeWidth={2}
+          />
+        </Button>
       </div>
     </div>
   )
