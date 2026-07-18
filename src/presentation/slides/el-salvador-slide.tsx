@@ -1,29 +1,26 @@
 import {
   Slide,
-  SlideBody,
   SlideKicker,
   SlideMain,
-  SlideSubtitle,
   SlideTitle,
 } from "@/presentation/slide"
 
 export function ElSalvadorSlide() {
   return (
-    <Slide variant="content">
-      <SlideKicker>Chapter one</SlideKicker>
-      <SlideTitle>It started here in El Salvador</SlideTitle>
-      <SlideSubtitle className="mt-[2cqh]">
-        The first chapter of this regional story was not a big conference. It
-        was people in El Salvador showing up, asking questions, and shipping
-        together.
-      </SlideSubtitle>
-      <SlideMain className="mt-[4cqh]">
-        <SlideBody>
-          <p>
-            That local energy mattered. It proved the Ambassadors model could
-            work in our context — real rooms, real projects, real follow-up.
-          </p>
-        </SlideBody>
+    <Slide variant="content" className="justify-center gap-0">
+      <SlideMain className="relative z-10 max-w-[36ch]">
+        <SlideKicker>Chapter one</SlideKicker>
+        <SlideTitle className="mt-[1.6cqh] max-w-[14ch]">
+          It started here in El Salvador
+        </SlideTitle>
+        <p className="deck-lead mt-[3.5cqh] max-w-[24ch] text-foreground">
+          Not a big conference — people showing up, asking questions, and
+          shipping together.
+        </p>
+        <p className="deck-callout mt-[3.5cqh] text-muted-foreground">
+          That local energy proved the Ambassadors model could work here: real
+          rooms, real projects, real follow-up.
+        </p>
       </SlideMain>
     </Slide>
   )

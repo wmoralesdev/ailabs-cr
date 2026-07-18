@@ -3,20 +3,23 @@ import {
   Slide,
   SlideFooter,
   SlideMain,
-  SlideSubtitle,
   SlideTitle,
 } from "@/presentation/slide"
 
 export function TitleSlide() {
   return (
     <Slide variant="title">
-      <SlideMain className="mt-auto mb-auto">
-        <BrandMark className="mb-[4cqh]" />
-        <SlideTitle>Cursor in Central America</SlideTitle>
-        <SlideSubtitle className="mt-[2.4cqh]">
-          How the community started, how it grew here, and how we actually use
-          the tool day to day.
-        </SlideSubtitle>
+      <SlideMain className="flex h-full flex-col">
+        <BrandMark />
+        <div className="mt-auto grid grid-cols-[1.2fr_0.8fr] items-end gap-[4cqw] pb-[2cqh]">
+          <SlideTitle className="max-w-[16ch]">
+            Cursor in Central America
+          </SlideTitle>
+          <p className="deck-aside mb-[0.6cqh] justify-self-end text-right">
+            How the community started, how it grew here, and how we actually use
+            the tool day to day.
+          </p>
+        </div>
       </SlideMain>
 
       <SlideFooter>

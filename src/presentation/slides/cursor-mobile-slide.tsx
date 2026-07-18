@@ -1,30 +1,41 @@
 import {
   Slide,
-  SlideBody,
   SlideKicker,
   SlideMain,
-  SlideSubtitle,
   SlideTitle,
 } from "@/presentation/slide"
 
+const steps = [
+  "Kick off a cloud agent when an idea shows up",
+  "Check progress, leave follow-ups, review what came back",
+  "Merge when it is ready — without opening the laptop first",
+]
+
 export function CursorMobileSlide() {
   return (
-    <Slide variant="content">
-      <SlideKicker>The newest piece</SlideKicker>
-      <SlideTitle>Cursor on your phone</SlideTitle>
-      <SlideSubtitle className="mt-[2cqh]">
-        Cursor for iOS is not about typing code on a tiny keyboard. It is about
-        starting and steering agents when you are away from your desk.
-      </SlideSubtitle>
-      <SlideMain className="mt-[4cqh]">
-        <SlideBody>
-          <ul>
-            <li>Kick off a cloud agent when an idea shows up</li>
-            <li>Check progress, leave follow-ups, review what came back</li>
-            <li>Merge when it is ready — without opening the laptop first</li>
-          </ul>
-        </SlideBody>
-      </SlideMain>
+    <Slide variant="content" className="justify-center gap-0">
+      <div className="deck-split relative z-10">
+        <div>
+          <SlideKicker>The newest piece</SlideKicker>
+          <SlideTitle className="mt-[1.6cqh] max-w-[10ch]">
+            Cursor on your phone
+          </SlideTitle>
+          <p className="deck-lead mt-[2.8cqh] max-w-[18ch] text-foreground">
+            Not typing on a tiny keyboard — starting and steering agents away
+            from your desk.
+          </p>
+        </div>
+        <SlideMain className="deck-rail">
+          {steps.map((step, index) => (
+            <div key={step} className="deck-rail-item">
+              <span className="deck-rail-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="deck-rail-text">{step}</p>
+            </div>
+          ))}
+        </SlideMain>
+      </div>
     </Slide>
   )
 }

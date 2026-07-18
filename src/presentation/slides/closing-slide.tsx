@@ -1,30 +1,29 @@
 import { BrandMark } from "@/presentation/brand-mark"
 import {
   Slide,
-  SlideBody,
   SlideFooter,
   SlideMain,
-  SlideSubtitle,
   SlideTitle,
 } from "@/presentation/slide"
 
 export function ClosingSlide() {
   return (
     <Slide variant="title">
-      <SlideMain className="mt-auto mb-auto">
-        <BrandMark className="mb-[4cqh]" />
-        <SlideTitle>And then there is AI Labs</SlideTitle>
-        <SlideSubtitle className="mt-[2.4cqh]">
-          We are the community in El Salvador that grew around this practice —
-          and kept going past any single tool.
-        </SlideSubtitle>
-        <SlideBody className="mt-[3.5cqh] max-w-[34ch] text-muted-foreground">
-          <p>
-            Come to the meetup to learn Cursor, sure. Stay because you want a
-            place to talk about AI more broadly — other tools, other workflows,
-            and how we keep raising the bar together.
+      <SlideMain className="flex h-full flex-col">
+        <BrandMark />
+        <div className="mt-auto max-w-[38ch] pb-[2cqh]">
+          <SlideTitle className="max-w-[14ch]">
+            And then there is AI Labs
+          </SlideTitle>
+          <p className="deck-lead mt-[2.8cqh] max-w-[28ch] text-foreground">
+            The community in El Salvador that grew around this practice — and
+            kept going past any single tool.
           </p>
-        </SlideBody>
+          <p className="deck-callout mt-[3cqh] text-muted-foreground">
+            Come for Cursor. Stay to talk about AI more broadly — other tools,
+            other workflows, and how we keep raising the bar together.
+          </p>
+        </div>
       </SlideMain>
 
       <SlideFooter>
