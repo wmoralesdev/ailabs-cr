@@ -87,17 +87,13 @@ export function PresentationShell({ slides }: PresentationShellProps) {
   return (
     <div
       ref={rootRef}
-      className="relative flex h-svh w-full items-center justify-center overflow-hidden bg-background"
+      className="relative h-svh w-full overflow-hidden bg-background"
+      data-slide-index={index}
+      data-slide-total={total}
     >
-      <div
-        className="relative h-[min(100svh,calc(100vw*9/16))] w-[min(100vw,calc(100svh*16/9))] overflow-hidden bg-background"
-        data-slide-index={index}
-        data-slide-total={total}
-      >
-        {current}
-      </div>
+      <div className="h-full w-full">{current}</div>
 
-      <div className="absolute right-4 bottom-4 flex items-center gap-2">
+      <div className="absolute right-4 bottom-4 z-20 flex items-center gap-2">
         <ThemeToggle />
         <Button
           type="button"

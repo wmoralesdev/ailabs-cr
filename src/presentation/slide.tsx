@@ -25,6 +25,10 @@ export function Slide({
         className
       )}
     >
+      <div aria-hidden className="deck-gradient pointer-events-none absolute inset-0">
+        <div className="absolute -top-[30%] -right-[12%] size-[52%] rounded-full bg-purple/25 blur-3xl" />
+        <div className="absolute -bottom-[35%] -left-[10%] size-[48%] rounded-full bg-lavender/20 blur-3xl dark:bg-lavender/10" />
+      </div>
       {children}
     </section>
   )
@@ -102,7 +106,10 @@ export function SlideSubtitle({
   ...props
 }: ComponentProps<"p">) {
   return (
-    <p className={cn("deck-subtitle text-pretty text-muted-foreground", className)} {...props}>
+    <p
+      className={cn("deck-subtitle text-pretty text-muted-foreground", className)}
+      {...props}
+    >
       {children}
     </p>
   )
