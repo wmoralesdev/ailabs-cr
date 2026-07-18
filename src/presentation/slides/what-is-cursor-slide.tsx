@@ -6,9 +6,9 @@ import {
 } from "@/presentation/slide"
 
 const points = [
-  "It reads the codebase you are working in",
-  "It proposes edits you can accept, tweak, or reject",
-  "You stay in control of what lands in the repo",
+  "Lee el codebase en el que estás trabajando",
+  "Propone ediciones que puedes aceptar, ajustar o rechazar",
+  "Tú decides qué termina en el repo",
 ]
 
 export function WhatIsCursorSlide() {
@@ -17,14 +17,13 @@ export function WhatIsCursorSlide() {
       <div className="relative z-10 flex h-full flex-col justify-between gap-[3cqh]">
         <div className="grid grid-cols-[1.1fr_0.9fr] items-start gap-[3cqw]">
           <div className="space-y-[1.4cqh]">
-            <SlideKicker>If you have never used it</SlideKicker>
+            <SlideKicker>Si nunca lo has usado</SlideKicker>
             <SlideTitle className="max-w-[16ch]">
-              Cursor is an editor built around AI
+              Cursor es tu agente de código
             </SlideTitle>
           </div>
           <p className="deck-lead mt-[3cqh] max-w-[24ch] text-foreground">
-            VS Code with AI that understands your project — not a chatbot on the
-            side.
+            Para construir software ambicioso, no un chatbot al lado.
           </p>
         </div>
 

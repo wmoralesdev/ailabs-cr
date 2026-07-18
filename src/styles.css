@@ -79,10 +79,8 @@
     --brand-border: #e8e4f0;
     --brand-border-dark: #44414f;
 
-    /* Deck atmosphere — one blended wash */
-    --deck-grad-start: color-mix(in srgb, #7eb8b4 40%, var(--background));
-    --deck-grad-mid: color-mix(in srgb, var(--brand-purple) 45%, var(--background));
-    --deck-grad-end: color-mix(in srgb, #d4a07a 38%, var(--background));
+    /* Deck atmosphere: purple wash over theme background */
+    --deck-grad-purple: color-mix(in srgb, var(--brand-purple) 38%, transparent);
 
     /* Spacing / layout */
     --space-section-y: 4rem;
@@ -159,7 +157,7 @@
     --secondary: transparent;
     --secondary-foreground: var(--brand-white);
     --muted: color-mix(in srgb, var(--brand-purple) 10%, var(--brand-graphite));
-    --muted-foreground: color-mix(in srgb, var(--brand-white) 68%, transparent);
+    --muted-foreground: color-mix(in srgb, var(--brand-white) 86%, transparent);
     --accent: color-mix(in srgb, var(--brand-purple) 14%, var(--brand-graphite));
     --accent-foreground: var(--brand-white);
     --destructive: color-mix(in srgb, #f87171 92%, white);
@@ -185,9 +183,7 @@
     --shadow-color-strong: color-mix(in srgb, black 55%, transparent);
     --shadow-glow: color-mix(in srgb, var(--brand-purple) 24%, transparent);
 
-    --deck-grad-start: color-mix(in srgb, #7eb8b4 28%, var(--background));
-    --deck-grad-mid: color-mix(in srgb, var(--brand-purple) 38%, var(--background));
-    --deck-grad-end: color-mix(in srgb, #d4a07a 26%, var(--background));
+    --deck-grad-purple: color-mix(in srgb, var(--brand-purple) 28%, transparent);
 }
 
 @layer base {
@@ -300,6 +296,28 @@
         color: var(--brand-purple);
         --stipple-opacity: 0.28;
     }
+
+    /* Reusable presence motions: opacity / subtle rise only */
+    .motion-fade-in {
+        opacity: 1;
+    }
+
+    .motion-rise {
+        opacity: 1;
+        transform: none;
+    }
+
+    .motion-delay-1 {
+        --motion-delay: 90ms;
+    }
+
+    .motion-delay-2 {
+        --motion-delay: 180ms;
+    }
+
+    .motion-delay-3 {
+        --motion-delay: 270ms;
+    }
 }
 
 @keyframes main-grid-glow {
@@ -313,9 +331,41 @@
     }
 }
 
+@keyframes motion-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes motion-rise {
+    from {
+        opacity: 0;
+        transform: translateY(0.55rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .main-grid-dots-glow {
         animation: main-grid-glow 6s var(--ease-standard) infinite;
+    }
+
+    .motion-fade-in {
+        animation: motion-fade-in var(--dur-enter) var(--ease-out) both;
+        animation-delay: var(--motion-delay, 0ms);
+    }
+
+    .motion-rise {
+        animation: motion-rise calc(var(--dur-enter) + 80ms) var(--ease-out) both;
+        animation-delay: var(--motion-delay, 0ms);
     }
 }
 
@@ -336,27 +386,108 @@
     }
 }
 
-/* Presentation deck — sizes scale with the 16:9 slide stage */
+/* Presentation deck: whole-slide enter/exit (shell only) */
+@keyframes deck-slide-enter-next {
+    from {
+        opacity: 0;
+        transform: translateX(3%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes deck-slide-enter-prev {
+    from {
+        opacity: 0;
+        transform: translateX(-3%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes deck-slide-exit-next {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-3%);
+    }
+}
+
+@keyframes deck-slide-exit-prev {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(3%);
+    }
+}
+
+.deck-slide-enter-next,
+.deck-slide-enter-prev,
+.deck-slide-exit-next,
+.deck-slide-exit-prev {
+    opacity: 1;
+    transform: none;
+    will-change: transform, opacity;
+}
+
+.deck-slide-exit-next,
+.deck-slide-exit-prev {
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .deck-slide-enter-next {
+        animation: deck-slide-enter-next var(--dur-base) var(--ease-out) both;
+    }
+
+    .deck-slide-enter-prev {
+        animation: deck-slide-enter-prev var(--dur-base) var(--ease-out) both;
+    }
+
+    .deck-slide-exit-next {
+        animation: deck-slide-exit-next var(--dur-base) var(--ease-out) both;
+    }
+
+    .deck-slide-exit-prev {
+        animation: deck-slide-exit-prev var(--dur-base) var(--ease-out) both;
+    }
+}
+
+/* Presentation deck: sizes scale with the 16:9 slide stage */
 @layer components {
     .deck-slide {
         container-type: size;
         container-name: slide;
         padding-inline: 6cqw;
-        padding-block: 6cqh;
+        /* Extra bottom pad so chrome (counter / theme / fullscreen) clears footers */
+        padding-block: 6cqh max(6cqh, 3.75rem);
     }
 
     .deck-gradient {
-        background: linear-gradient(
-            125deg,
-            var(--deck-grad-start) 0%,
-            var(--deck-grad-mid) 48%,
-            var(--deck-grad-end) 100%
+        background: radial-gradient(
+            ellipse 95% 85% at 38% 42%,
+            var(--deck-grad-purple) 0%,
+            transparent 68%
         );
     }
 
     .deck-kicker {
         font-family: var(--font-sans);
-        font-size: 1.35cqw;
+        font-size: 1.45cqw;
         font-weight: 500;
         letter-spacing: 0.08em;
         line-height: 1.2;
@@ -408,9 +539,9 @@
 
     .deck-body {
         font-family: var(--font-sans);
-        font-size: 1.7cqw;
+        font-size: 1.85cqw;
         font-weight: 400;
-        line-height: 1.4;
+        line-height: 1.45;
         max-width: 40ch;
     }
 
@@ -458,9 +589,9 @@
 
     .deck-aside {
         font-family: var(--font-sans);
-        font-size: 1.55cqw;
+        font-size: 1.7cqw;
         font-weight: 400;
-        line-height: 1.45;
+        line-height: 1.5;
         color: var(--muted-foreground);
         max-width: 34ch;
     }
@@ -519,9 +650,9 @@
 
     .deck-rail-text {
         font-family: var(--font-sans);
-        font-size: 1.75cqw;
+        font-size: 1.85cqw;
         font-weight: 400;
-        line-height: 1.35;
+        line-height: 1.4;
     }
 
     .deck-columns {
@@ -542,9 +673,9 @@
 
     .deck-column-text {
         font-family: var(--font-sans);
-        font-size: 1.65cqw;
+        font-size: 1.75cqw;
         font-weight: 400;
-        line-height: 1.35;
+        line-height: 1.4;
         max-width: 16ch;
     }
 
@@ -578,8 +709,40 @@
         border-left: 0.35cqw solid color-mix(in srgb, var(--brand-purple) 70%, transparent);
         padding-left: 1.8cqw;
         font-family: var(--font-sans);
-        font-size: 1.85cqw;
+        font-size: 1.95cqw;
         line-height: 1.4;
         max-width: 28ch;
+    }
+
+    /* One-time enter stagger for rail / callout lists (slide remount triggers it) */
+    .deck-stagger > * {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .deck-stagger > * {
+        animation: motion-rise calc(var(--dur-enter) + 40ms) var(--ease-out) both;
+    }
+
+    .deck-stagger > *:nth-child(1) {
+        animation-delay: 60ms;
+    }
+
+    .deck-stagger > *:nth-child(2) {
+        animation-delay: 140ms;
+    }
+
+    .deck-stagger > *:nth-child(3) {
+        animation-delay: 220ms;
+    }
+
+    .deck-stagger > *:nth-child(4) {
+        animation-delay: 300ms;
+    }
+
+    .deck-stagger > *:nth-child(5) {
+        animation-delay: 380ms;
     }
 }

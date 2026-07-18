@@ -7,16 +7,16 @@ import {
 
 const columns = [
   {
-    label: "IDE window",
-    text: "Write, review diffs, and steer short edits in context.",
+    label: "Ventana IDE",
+    text: "Escribe, revisa diffs y guía edits cortos en contexto.",
   },
   {
-    label: "Agents window",
-    text: "Hand off longer tasks and watch them run.",
+    label: "Ventana Agents",
+    text: "Delega tareas más largas y míralas correr.",
   },
   {
-    label: "Integrations",
-    text: "Plug in the tools your team already uses.",
+    label: "Integraciones",
+    text: "Conecta las herramientas que tu equipo ya usa.",
   },
 ]
 
@@ -26,12 +26,12 @@ export function CursorWindowsSlide() {
       <div className="relative z-10 flex h-full flex-col justify-between gap-[3cqh]">
         <div className="grid grid-cols-[1.05fr_0.95fr] items-start gap-[3cqw]">
           <div className="space-y-[1.4cqh]">
-            <SlideKicker>How you work in it</SlideKicker>
-            <SlideTitle>IDE, Agents, and integrations</SlideTitle>
+            <SlideKicker>Cómo trabajas ahí</SlideKicker>
+            <SlideTitle>IDE, Agents e integraciones</SlideTitle>
           </div>
           <p className="deck-aside mt-[3cqh]">
-            Day to day you bounce between the editor and the Agents window —
-            plus whatever you connect so Cursor fits your stack.
+            Día a día vas y vienes entre el editor y la ventana de Agents, más
+            lo que conectes para que Cursor encaje en tu stack.
           </p>
         </div>
 

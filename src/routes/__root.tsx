@@ -15,7 +15,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "AI Labs — Presentation",
+        title: "Ai Labs · Presentación",
       },
     ],
     links: [
@@ -28,7 +28,7 @@ export const Route = createRootRoute({
   notFoundComponent: () => (
     <main className="container mx-auto p-4 pt-16">
       <h1>404</h1>
-      <p>The requested page could not be found.</p>
+      <p>No se encontró la página solicitada.</p>
     </main>
   ),
   shellComponent: RootDocument,
@@ -36,7 +36,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

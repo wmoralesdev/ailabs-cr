@@ -6,9 +6,9 @@ import {
 } from "@/presentation/slide"
 
 const steps = [
-  "Kick off a cloud agent when an idea shows up",
-  "Check progress, leave follow-ups, review what came back",
-  "Merge when it is ready — without opening the laptop first",
+  "Arranca un cloud agent cuando aparece una idea",
+  "Revisa el progreso, deja follow-ups y mira qué volvió",
+  "Haz merge cuando esté listo, sin abrir la laptop primero",
 ]
 
 export function CursorMobileSlide() {
@@ -17,15 +17,15 @@ export function CursorMobileSlide() {
       <div className="deck-split relative z-10 h-full items-stretch">
         <div className="flex flex-col justify-between py-[1cqh]">
           <div className="space-y-[1.6cqh]">
-            <SlideKicker>The newest piece</SlideKicker>
-            <SlideTitle className="max-w-[10ch]">Cursor on your phone</SlideTitle>
+            <SlideKicker>La pieza más nueva</SlideKicker>
+            <SlideTitle className="max-w-[10ch]">Cursor en el teléfono</SlideTitle>
           </div>
           <p className="deck-lead max-w-[20ch] text-foreground">
-            Not typing on a tiny keyboard — starting and steering agents away
-            from your desk.
+            No es tipear en un teclado chico. Es arrancar y guiar agents lejos
+            del escritorio.
           </p>
         </div>
-        <SlideMain className="deck-rail flex flex-col justify-center">
+        <SlideMain className="deck-rail deck-stagger flex flex-col justify-center">
           {steps.map((step, index) => (
             <div key={step} className="deck-rail-item">
               <span className="deck-rail-index">

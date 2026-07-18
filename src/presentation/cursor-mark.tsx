@@ -3,11 +3,11 @@ import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 
-type BrandMarkProps = {
+type CursorMarkProps = {
   className?: string
 }
 
-export function BrandMark({ className }: BrandMarkProps) {
+export function CursorMark({ className }: CursorMarkProps) {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -17,13 +17,13 @@ export function BrandMark({ className }: BrandMarkProps) {
 
   const src =
     mounted && resolvedTheme === "dark"
-      ? "/brand/ailabs-light.svg"
-      : "/brand/ailabs-dark.svg"
+      ? "/cursor/LOCKUP_HORIZONTAL_2D_DARK.svg"
+      : "/cursor/LOCKUP_HORIZONTAL_2D_LIGHT.svg"
 
   return (
     <img
       src={src}
-      alt="Ai Labs"
+      alt="Cursor"
       className={cn("h-[4.2cqw] w-auto", className)}
     />
   )

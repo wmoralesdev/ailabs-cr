@@ -12,7 +12,7 @@ type IphoneFrameProps = {
 export function IphoneFrame({
   children,
   className,
-  caption = "Screenshot",
+  caption = "Captura",
 }: IphoneFrameProps) {
   return (
     <div
@@ -24,16 +24,16 @@ export function IphoneFrame({
     >
       <div className="absolute inset-[0.55cqw] overflow-hidden rounded-[1.7cqw] bg-background">
         <div className="absolute top-[1.1cqw] left-1/2 z-10 h-[1.35cqw] w-[28%] -translate-x-1/2 rounded-full bg-graphite" />
-        <div className="flex h-full w-full items-center justify-center">
-          {children ?? (
-            <div className="flex h-full w-full flex-col items-center justify-center gap-[1cqh] bg-muted/60 px-[1.2cqw] text-center">
-              <div className="size-[18%] rounded-[0.8cqw] border border-dashed border-border-dark/40 dark:border-white/25" />
-              <p className="font-sans text-[1.1cqw] leading-snug text-muted-foreground">
-                {caption}
-              </p>
-            </div>
-          )}
-        </div>
+        {children ? (
+          <div className="h-full w-full">{children}</div>
+        ) : (
+          <div className="flex h-full w-full flex-col items-center justify-center gap-[1cqh] bg-muted/60 px-[1.2cqw] text-center">
+            <div className="size-[18%] rounded-[0.8cqw] border border-dashed border-border-dark/40 dark:border-white/25" />
+            <p className="font-sans text-[1.1cqw] leading-snug text-muted-foreground">
+              {caption}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   )

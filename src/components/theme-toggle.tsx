@@ -11,9 +11,9 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const options = [
-  { value: "light", label: "Light", icon: Sun03Icon },
-  { value: "dark", label: "Dark", icon: Moon02Icon },
-  { value: "system", label: "System", icon: ComputerIcon },
+  { value: "light", label: "Claro", icon: Sun03Icon },
+  { value: "dark", label: "Oscuro", icon: Moon02Icon },
+  { value: "system", label: "Sistema", icon: ComputerIcon },
 ] as const
 
 export function ThemeToggle({ className }: { className?: string }) {
@@ -31,7 +31,7 @@ export function ThemeToggle({ className }: { className?: string }) {
   return (
     <div
       role="group"
-      aria-label="Theme"
+      aria-label="Tema"
       className={cn(
         "flex items-center rounded-md border border-border bg-background/90 p-0.5 shadow-soft backdrop-blur-sm",
         className

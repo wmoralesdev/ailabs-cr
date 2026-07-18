@@ -7,16 +7,16 @@ import {
 
 const rows = [
   {
-    label: "Faster",
-    text: "Small edits, exploration, when you want momentum.",
+    label: "Más rápido",
+    text: "Edits chicos y exploración, cuando quieres avanzar rápido.",
   },
   {
-    label: "Stronger",
-    text: "Messy, multi-step work that needs more judgment.",
+    label: "Más fuerte",
+    text: "Trabajo enmarañado, de varios pasos, que pide más criterio.",
   },
   {
     label: "Flexible",
-    text: "Switch mid-session when the work changes shape.",
+    text: "Cambia a mitad de sesión si el trabajo cambia de forma.",
   },
 ]
 
@@ -26,16 +26,16 @@ export function CursorModelsSlide() {
       <div className="deck-split relative z-10 h-full items-stretch">
         <div className="flex flex-col justify-between py-[1cqh]">
           <div className="space-y-[1.6cqh]">
-            <SlideKicker>Models</SlideKicker>
-            <SlideTitle>Pick the model for the job</SlideTitle>
+            <SlideKicker>Modelos</SlideKicker>
+            <SlideTitle>Elige el modelo para el trabajo</SlideTitle>
           </div>
           <p className="deck-aside">
-            Inside Cursor you switch models for speed, depth, or a longer agent
-            run — whatever the moment needs.
+            Dentro de Cursor cambias de modelo según lo que pida el momento:
+            velocidad, profundidad o una corrida de agente más larga.
           </p>
         </div>
 
-        <SlideMain className="deck-rail flex flex-col justify-center">
+        <SlideMain className="deck-rail deck-stagger flex flex-col justify-center">
           {rows.map((row) => (
             <div key={row.label} className="deck-rail-item grid-cols-[8cqw_1fr]">
               <span className="deck-rail-index tracking-tight">{row.label}</span>

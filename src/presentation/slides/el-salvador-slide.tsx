@@ -8,24 +8,34 @@ import {
 export function ElSalvadorSlide() {
   return (
     <Slide variant="content">
-      <SlideMain className="relative z-10 grid h-full grid-cols-[1fr_1fr] items-stretch gap-[4cqw]">
-        <div className="flex flex-col justify-between py-[1cqh]">
-          <SlideKicker>Chapter one</SlideKicker>
-          <SlideTitle className="max-w-[13ch]">
-            It started here in El Salvador
-          </SlideTitle>
+      <div className="deck-split relative z-10 h-full items-stretch">
+        <div className="flex min-h-0 flex-col justify-between gap-[3cqh] py-[1cqh]">
+          <div className="space-y-[1.6cqh]">
+            <SlideKicker>Capítulo uno</SlideKicker>
+            <SlideTitle className="max-w-[13ch]">
+              Empezó aquí, en El Salvador
+            </SlideTitle>
+          </div>
+          <SlideMain className="flex flex-col justify-end gap-[2.4cqh]">
+            <p className="deck-lead max-w-[24ch] text-foreground">
+              No fue una gran conferencia. Fue gente llegando, haciendo
+              preguntas y construyendo junta.
+            </p>
+            <p className="deck-callout text-muted-foreground">
+              Ahí se vio que Ambassadors podía funcionar aquí: salas reales,
+              proyectos reales, gente que volvía.
+            </p>
+          </SlideMain>
         </div>
-        <div className="flex flex-col justify-between gap-[3cqh] py-[1cqh]">
-          <p className="deck-lead max-w-[24ch] text-foreground">
-            Not a big conference — people showing up, asking questions, and
-            shipping together.
-          </p>
-          <p className="deck-callout text-muted-foreground">
-            That local energy proved the Ambassadors model could work here: real
-            rooms, real projects, real follow-up.
-          </p>
-        </div>
-      </SlideMain>
+
+        <figure className="relative min-h-0 self-center overflow-hidden rounded-[1.2cqw] shadow-panel">
+          <img
+            src="/img/_DSC0897.jpg"
+            alt="Builders trabajando juntos en un meetup de Cursor"
+            className="aspect-[3/2] h-full max-h-[62cqh] w-full object-cover"
+          />
+        </figure>
+      </div>
     </Slide>
   )
 }
