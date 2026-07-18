@@ -32,10 +32,10 @@ export function ClosingSlide() {
         <BrandMark className="motion-fade-in self-start" />
 
         <div className="mt-auto flex w-full flex-col gap-[4cqh]">
-          <div className="motion-rise motion-delay-1 flex max-w-[16ch] flex-col gap-[2cqh]">
+          <div className="motion-rise motion-delay-1 flex max-w-[32ch] flex-col gap-[2cqh]">
             <SlideTitle>Gracias</SlideTitle>
             <p className="deck-aside text-muted-foreground">
-              Gracias por acompañarnos. Seguimos en la comunidad.
+Seguimos en la comunidad.
             </p>
           </div>
 

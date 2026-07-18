@@ -22,7 +22,7 @@ export function WhatIsCursorSlide() {
               Cursor es tu agente de código
             </SlideTitle>
           </div>
-          <p className="deck-lead mt-[3cqh] max-w-[24ch] text-foreground">
+          <p className="deck-lead mt-[3cqh] max-w-[48ch] text-foreground">
             Para construir software ambicioso, no un chatbot al lado.
           </p>
         </div>
