@@ -44,8 +44,6 @@ export function PresentationShell({ slides }: PresentationShellProps) {
     await root.requestFullscreen()
   }
 
-  // isFullscreen kept for the expand/shrink icon only
-
   useEffect(() => {
     const goNext = () => {
       setIndex((value) => Math.min(value + 1, Math.max(total - 1, 0)))
