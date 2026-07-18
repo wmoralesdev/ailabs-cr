@@ -22,16 +22,14 @@ const columns = [
 
 export function CursorWindowsSlide() {
   return (
-    <Slide variant="content" className="justify-center gap-0">
-      <div className="relative z-10 flex h-full flex-col justify-center gap-[5cqh]">
-        <div className="grid grid-cols-[1.05fr_0.95fr] items-end gap-[3cqw]">
-          <div>
+    <Slide variant="content">
+      <div className="relative z-10 flex h-full flex-col justify-between gap-[3cqh]">
+        <div className="grid grid-cols-[1.05fr_0.95fr] items-start gap-[3cqw]">
+          <div className="space-y-[1.4cqh]">
             <SlideKicker>How you work in it</SlideKicker>
-            <SlideTitle className="mt-[1.2cqh]">
-              IDE, Agents, and integrations
-            </SlideTitle>
+            <SlideTitle>IDE, Agents, and integrations</SlideTitle>
           </div>
-          <p className="deck-aside pb-[0.4cqh]">
+          <p className="deck-aside mt-[3cqh]">
             Day to day you bounce between the editor and the Agents window —
             plus whatever you connect so Cursor fits your stack.
           </p>

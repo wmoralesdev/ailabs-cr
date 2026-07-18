@@ -80,9 +80,9 @@
     --brand-border-dark: #44414f;
 
     /* Deck atmosphere — one blended wash */
-    --deck-grad-start: color-mix(in oklab, #6aabb0 32%, var(--background));
-    --deck-grad-mid: color-mix(in oklab, var(--brand-purple) 36%, var(--background));
-    --deck-grad-end: color-mix(in oklab, #d4a07a 28%, var(--background));
+    --deck-grad-start: color-mix(in srgb, #7eb8b4 40%, var(--background));
+    --deck-grad-mid: color-mix(in srgb, var(--brand-purple) 45%, var(--background));
+    --deck-grad-end: color-mix(in srgb, #d4a07a 38%, var(--background));
 
     /* Spacing / layout */
     --space-section-y: 4rem;
@@ -185,9 +185,9 @@
     --shadow-color-strong: color-mix(in srgb, black 55%, transparent);
     --shadow-glow: color-mix(in srgb, var(--brand-purple) 24%, transparent);
 
-    --deck-grad-start: color-mix(in oklab, #6aabb0 22%, var(--background));
-    --deck-grad-mid: color-mix(in oklab, var(--brand-purple) 30%, var(--background));
-    --deck-grad-end: color-mix(in oklab, #d4a07a 20%, var(--background));
+    --deck-grad-start: color-mix(in srgb, #7eb8b4 28%, var(--background));
+    --deck-grad-mid: color-mix(in srgb, var(--brand-purple) 38%, var(--background));
+    --deck-grad-end: color-mix(in srgb, #d4a07a 26%, var(--background));
 }
 
 @layer base {
@@ -347,9 +347,9 @@
 
     .deck-gradient {
         background: linear-gradient(
-            135deg in oklab,
+            125deg,
             var(--deck-grad-start) 0%,
-            var(--deck-grad-mid) 52%,
+            var(--deck-grad-mid) 48%,
             var(--deck-grad-end) 100%
         );
     }
@@ -484,7 +484,7 @@
     .deck-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        align-items: start;
+        align-items: stretch;
         gap: 4cqw;
         height: 100%;
         min-height: 0;

@@ -14,12 +14,14 @@ const steps = [
 
 export function CursorIosDemoSlide() {
   return (
-    <Slide variant="content" className="justify-center gap-0">
-      <div className="relative z-10 grid h-full min-h-0 grid-cols-[1.05fr_0.95fr] items-center gap-[3cqw]">
-        <div className="flex flex-col justify-center gap-[2cqh]">
-          <SlideKicker>On the phone</SlideKicker>
-          <SlideTitle className="max-w-[12ch]">A quick look at the flow</SlideTitle>
-          <SlideMain className="deck-rail mt-[0.5cqh] max-w-[32ch]">
+    <Slide variant="content">
+      <div className="relative z-10 grid h-full min-h-0 grid-cols-[1.05fr_0.95fr] items-stretch gap-[3cqw]">
+        <div className="flex flex-col justify-between py-[1cqh]">
+          <div className="space-y-[1.6cqh]">
+            <SlideKicker>On the phone</SlideKicker>
+            <SlideTitle className="max-w-[12ch]">A quick look at the flow</SlideTitle>
+          </div>
+          <SlideMain className="deck-rail max-w-[32ch]">
             {steps.map((step, index) => (
               <div key={step} className="deck-rail-item">
                 <span className="deck-rail-index">
@@ -35,7 +37,7 @@ export function CursorIosDemoSlide() {
           </p>
         </div>
 
-        <div className="flex h-full items-center justify-center gap-[2cqw]">
+        <div className="flex items-center justify-end gap-[2cqw]">
           <IphoneFrame caption="Home / agents" className="w-[min(24cqw,15rem)]" />
           <IphoneFrame caption="Agent run" className="w-[min(24cqw,15rem)]" />
         </div>

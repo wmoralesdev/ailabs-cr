@@ -13,21 +13,23 @@ const cases = [
 
 export function CursorUseCasesSlide() {
   return (
-    <Slide variant="content" className="justify-center gap-0">
-      <div className="deck-split relative z-10 content-center">
-        <div className="flex h-full flex-col justify-center gap-[1.8cqh]">
-          <SlideKicker>Use cases</SlideKicker>
-          <SlideTitle className="max-w-[11ch]">
-            Where people lean on it
-          </SlideTitle>
+    <Slide variant="content">
+      <div className="deck-split relative z-10 h-full items-stretch">
+        <div className="flex flex-col justify-between py-[1cqh]">
+          <div className="space-y-[1.6cqh]">
+            <SlideKicker>Use cases</SlideKicker>
+            <SlideTitle className="max-w-[11ch]">
+              Where people lean on it
+            </SlideTitle>
+          </div>
           <p className="deck-aside">
             Same tool, different jobs — alone, with a team, or learning in
             public.
           </p>
         </div>
-        <SlideMain className="flex h-full flex-col justify-center gap-[2cqh]">
+        <SlideMain className="flex flex-col justify-center gap-[2.2cqh]">
           {cases.map((item) => (
-            <p key={item} className="deck-callout max-w-[30ch] text-foreground">
+            <p key={item} className="deck-callout max-w-[32ch] text-foreground">
               {item}
             </p>
           ))}

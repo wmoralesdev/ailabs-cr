@@ -9,13 +9,13 @@ import {
 export function ClosingSlide() {
   return (
     <Slide variant="title">
-      <SlideMain className="flex h-full flex-col justify-between gap-[4cqh]">
+      <SlideMain className="flex h-full flex-col justify-between">
         <BrandMark />
-        <div className="grid max-w-[52ch] grid-cols-[1.05fr_0.95fr] items-end gap-[3cqw]">
+        <div className="grid max-w-[56ch] grid-cols-[1.05fr_0.95fr] items-end gap-[3cqw]">
           <SlideTitle className="max-w-[12ch]">
             And then there is AI Labs
           </SlideTitle>
-          <div className="space-y-[2cqh] pb-[0.3cqh]">
+          <div className="space-y-[2cqh] pb-[0.2cqh]">
             <p className="deck-lead max-w-[22ch] text-foreground">
               The community in El Salvador that grew around this practice — and
               kept going past any single tool.

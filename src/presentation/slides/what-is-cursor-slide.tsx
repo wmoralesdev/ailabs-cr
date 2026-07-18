@@ -13,16 +13,16 @@ const points = [
 
 export function WhatIsCursorSlide() {
   return (
-    <Slide variant="content" className="justify-center gap-0">
-      <div className="relative z-10 flex h-full flex-col justify-center gap-[5cqh]">
-        <div className="grid grid-cols-[1.1fr_0.9fr] items-end gap-[3cqw]">
-          <div>
+    <Slide variant="content">
+      <div className="relative z-10 flex h-full flex-col justify-between gap-[3cqh]">
+        <div className="grid grid-cols-[1.1fr_0.9fr] items-start gap-[3cqw]">
+          <div className="space-y-[1.4cqh]">
             <SlideKicker>If you have never used it</SlideKicker>
-            <SlideTitle className="mt-[1.2cqh] max-w-[16ch]">
+            <SlideTitle className="max-w-[16ch]">
               Cursor is an editor built around AI
             </SlideTitle>
           </div>
-          <p className="deck-lead max-w-[24ch] pb-[0.3cqh] text-foreground">
+          <p className="deck-lead mt-[3cqh] max-w-[24ch] text-foreground">
             VS Code with AI that understands your project — not a chatbot on the
             side.
           </p>

@@ -9,9 +9,9 @@ import {
 export function TitleSlide() {
   return (
     <Slide variant="title">
-      <SlideMain className="flex h-full flex-col justify-end gap-[3cqh]">
+      <SlideMain className="flex h-full flex-col justify-between">
         <BrandMark />
-        <div className="grid grid-cols-[1.2fr_0.8fr] items-end gap-[3cqw]">
+        <div className="grid grid-cols-[1.15fr_0.85fr] items-end gap-[3cqw]">
           <SlideTitle className="max-w-[15ch]">
             Cursor in Central America
           </SlideTitle>
@@ -22,7 +22,7 @@ export function TitleSlide() {
         </div>
       </SlideMain>
 
-      <SlideFooter className="mt-[4cqh]">
+      <SlideFooter className="mt-[3cqh]">
         <span>AI Labs</span>
         <span>Community meetup</span>
       </SlideFooter>

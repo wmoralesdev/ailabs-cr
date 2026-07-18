@@ -21,8 +21,8 @@ export function Slide({
       className={cn(
         "deck-slide relative flex h-full w-full flex-col overflow-hidden bg-background text-foreground",
         variant === "title" && "justify-between",
-        variant === "section" && "justify-center",
-        variant === "content" && "justify-start gap-[3cqh]",
+        variant === "section" && "justify-between",
+        variant === "content" && "justify-between gap-[3cqh]",
         className
       )}
     >
