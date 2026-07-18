@@ -10,17 +10,18 @@ import {
 export function CentralAmericaSlide() {
   return (
     <Slide variant="content">
-      <SlideKicker>The region</SlideKicker>
-      <SlideTitle>Then it spread across Central America</SlideTitle>
+      <SlideKicker>Then the map filled in</SlideKicker>
+      <SlideTitle>Guatemala, Panama, and now Costa Rica</SlideTitle>
       <SlideSubtitle className="mt-[2cqh]">
-        What worked in El Salvador became a pattern other cities could run with.
+        After El Salvador, Ambassadors and organizers showed up next door —
+        first Guatemala, then Panama, and now Costa Rica.
       </SlideSubtitle>
       <SlideMain className="mt-[4cqh]">
         <SlideBody>
           <ul>
-            <li>Meetups and circles forming beyond one country</li>
-            <li>Builders sharing prompts, reviews, and shipping habits</li>
-            <li>A regional network — connected, still local</li>
+            <li>Same idea: local communities, not one-off talks</li>
+            <li>Different cities, shared language around building with AI</li>
+            <li>A region that keeps learning in public</li>
           </ul>
         </SlideBody>
       </SlideMain>

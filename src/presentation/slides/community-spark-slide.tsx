@@ -10,19 +10,20 @@ import {
 export function CommunitySparkSlide() {
   return (
     <Slide variant="content">
-      <SlideKicker>The beginning</SlideKicker>
-      <SlideTitle>A program for builders who gather people</SlideTitle>
+      <SlideKicker>A couple of years ago</SlideKicker>
+      <SlideTitle>It started as a bet on people</SlideTitle>
       <SlideSubtitle className="mt-[2cqh]">
-        Cursor saw a global community already forming — meetups, forums, shared
-        workflows — and decided to back it formally.
+        Cursor launched the Ambassadors program so builders in different
+        countries could own the community in their own cities — not wait for a
+        tour from HQ.
       </SlideSubtitle>
       <SlideMain className="mt-[4cqh]">
         <SlideBody>
-          <ul>
-            <li>Ambassadors host meetups, hackathons, and workshops</li>
-            <li>Local leaders help new users find their footing</li>
-            <li>Feedback from the floor reaches the Cursor team</li>
-          </ul>
+          <p>
+            Country by country, people joined. The idea was simple: if you care
+            about how folks learn to build with AI, you should be able to gather
+            them where you live.
+          </p>
         </SlideBody>
       </SlideMain>
     </Slide>

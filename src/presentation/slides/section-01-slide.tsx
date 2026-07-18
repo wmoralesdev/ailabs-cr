@@ -5,7 +5,7 @@ export function Section01Slide() {
     <Slide variant="section">
       <SlideMain>
         <SlideNumber>01</SlideNumber>
-        <SlideTitle>How Cursor Community started</SlideTitle>
+        <SlideTitle>The Cursor Ambassadors program</SlideTitle>
       </SlideMain>
     </Slide>
   )

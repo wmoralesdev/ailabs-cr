@@ -5,7 +5,7 @@ export function Section04Slide() {
     <Slide variant="section">
       <SlideMain>
         <SlideNumber>04</SlideNumber>
-        <SlideTitle>Cursor for Mobile and Cursor Grok</SlideTitle>
+        <SlideTitle>Cursor for iOS</SlideTitle>
       </SlideMain>
     </Slide>
   )

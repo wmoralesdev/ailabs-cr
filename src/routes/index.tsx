@@ -5,17 +5,18 @@ import { CentralAmericaSlide } from "@/presentation/slides/central-america-slide
 import { ClosingSlide } from "@/presentation/slides/closing-slide"
 import { CommunityNetworkSlide } from "@/presentation/slides/community-network-slide"
 import { CommunitySparkSlide } from "@/presentation/slides/community-spark-slide"
-import { CursorGrokSlide } from "@/presentation/slides/cursor-grok-slide"
+import { CursorIosDemoSlide } from "@/presentation/slides/cursor-ios-demo-slide"
 import { CursorMobileSlide } from "@/presentation/slides/cursor-mobile-slide"
+import { CursorModelsSlide } from "@/presentation/slides/cursor-models-slide"
+import { CursorUseCasesSlide } from "@/presentation/slides/cursor-use-cases-slide"
+import { CursorWindowsSlide } from "@/presentation/slides/cursor-windows-slide"
 import { ElSalvadorSlide } from "@/presentation/slides/el-salvador-slide"
 import { Section01Slide } from "@/presentation/slides/section-01-slide"
 import { Section02Slide } from "@/presentation/slides/section-02-slide"
 import { Section03Slide } from "@/presentation/slides/section-03-slide"
 import { Section04Slide } from "@/presentation/slides/section-04-slide"
 import { TitleSlide } from "@/presentation/slides/title-slide"
-import { UseCaseLearningSlide } from "@/presentation/slides/use-case-learning-slide"
-import { UseCaseSoloSlide } from "@/presentation/slides/use-case-solo-slide"
-import { UseCaseTeamsSlide } from "@/presentation/slides/use-case-teams-slide"
+import { WhatIsCursorSlide } from "@/presentation/slides/what-is-cursor-slide"
 
 export const Route = createFileRoute("/")({ component: App })
 
@@ -31,12 +32,13 @@ function App() {
         <ElSalvadorSlide key="el-salvador" />,
         <CentralAmericaSlide key="central-america" />,
         <Section03Slide key="section-03" />,
-        <UseCaseSoloSlide key="use-case-solo" />,
-        <UseCaseTeamsSlide key="use-case-teams" />,
-        <UseCaseLearningSlide key="use-case-learning" />,
+        <WhatIsCursorSlide key="what-is-cursor" />,
+        <CursorModelsSlide key="cursor-models" />,
+        <CursorWindowsSlide key="cursor-windows" />,
+        <CursorUseCasesSlide key="cursor-use-cases" />,
         <Section04Slide key="section-04" />,
         <CursorMobileSlide key="cursor-mobile" />,
-        <CursorGrokSlide key="cursor-grok" />,
+        <CursorIosDemoSlide key="cursor-ios-demo" />,
         <ClosingSlide key="closing" />,
       ]}
     />

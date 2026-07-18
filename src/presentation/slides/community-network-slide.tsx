@@ -10,17 +10,18 @@ import {
 export function CommunityNetworkSlide() {
   return (
     <Slide variant="content">
-      <SlideKicker>The network</SlideKicker>
-      <SlideTitle>Community at scale</SlideTitle>
+      <SlideKicker>What the program is for</SlideKicker>
+      <SlideTitle>Meetups, workshops, and shared practice</SlideTitle>
       <SlideSubtitle className="mt-[2cqh]">
-        What started as a call for input became a worldwide Ambassador program.
+        Each country builds its own rhythm — hackathons, workshops, casual
+        meetups — whatever helps people level up together.
       </SlideSubtitle>
       <SlideMain className="mt-[4cqh]">
         <SlideBody>
           <ul>
-            <li>Hundreds of ambassadors across dozens of countries</li>
-            <li>Hundreds of cities hosting Cursor events</li>
-            <li>A shared craft: ship in public, teach by doing</li>
+            <li>Learn Cursor in a room with other builders</li>
+            <li>Go deeper on AI in general, not only one product</li>
+            <li>Leave with habits you can use on Monday morning</li>
           </ul>
         </SlideBody>
       </SlideMain>

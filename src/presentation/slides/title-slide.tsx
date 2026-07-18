@@ -14,7 +14,8 @@ export function TitleSlide() {
         <BrandMark className="mb-[4cqh]" />
         <SlideTitle>Cursor in Central America</SlideTitle>
         <SlideSubtitle className="mt-[2.4cqh]">
-          From community roots to the ways we build — and what comes next.
+          How the community started, how it grew here, and how we actually use
+          the tool day to day.
         </SlideSubtitle>
       </SlideMain>
 

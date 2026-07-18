@@ -10,19 +10,19 @@ import {
 export function ElSalvadorSlide() {
   return (
     <Slide variant="content">
-      <SlideKicker>El Salvador</SlideKicker>
-      <SlideTitle>Where the local story begins</SlideTitle>
+      <SlideKicker>Chapter one</SlideKicker>
+      <SlideTitle>It started here in El Salvador</SlideTitle>
       <SlideSubtitle className="mt-[2cqh]">
-        Cursor Community in the region did not start as a corporate tour. It
-        started with people in El Salvador gathering builders in a room.
+        The first chapter of this regional story was not a big conference. It
+        was people in El Salvador showing up, asking questions, and shipping
+        together.
       </SlideSubtitle>
       <SlideMain className="mt-[4cqh]">
         <SlideBody>
-          <ul>
-            <li>First meetups focused on real workflows, not demos for show</li>
-            <li>Ambassadors and organizers making space for beginners and pros</li>
-            <li>A proof point: the community can grow from here</li>
-          </ul>
+          <p>
+            That local energy mattered. It proved the Ambassadors model could
+            work in our context — real rooms, real projects, real follow-up.
+          </p>
         </SlideBody>
       </SlideMain>
     </Slide>

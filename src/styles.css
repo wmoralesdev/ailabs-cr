@@ -400,11 +400,11 @@
     }
 
     .deck-slide[data-variant="section"] .deck-title {
-        font-size: 4.4cqw;
+        font-size: 4.2cqw;
         font-weight: 600;
         letter-spacing: -0.03em;
         line-height: 1;
-        max-width: 14ch;
+        max-width: 16ch;
     }
 
     .deck-slide[data-variant="content"] .deck-title {
