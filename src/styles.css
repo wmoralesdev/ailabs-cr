@@ -80,10 +80,9 @@
     --brand-border-dark: #44414f;
 
     /* Deck atmosphere — one blended wash */
-    --deck-wash-a: color-mix(in srgb, #5eb7b0 24%, var(--background));
-    --deck-wash-b: color-mix(in srgb, var(--brand-purple) 28%, var(--background));
-    --deck-wash-c: color-mix(in srgb, #d4a0c2 18%, var(--background));
-    --deck-wash-d: color-mix(in srgb, #e0a36a 20%, var(--background));
+    --deck-grad-start: color-mix(in oklab, #6aabb0 32%, var(--background));
+    --deck-grad-mid: color-mix(in oklab, var(--brand-purple) 36%, var(--background));
+    --deck-grad-end: color-mix(in oklab, #d4a07a 28%, var(--background));
 
     /* Spacing / layout */
     --space-section-y: 4rem;
@@ -186,10 +185,9 @@
     --shadow-color-strong: color-mix(in srgb, black 55%, transparent);
     --shadow-glow: color-mix(in srgb, var(--brand-purple) 24%, transparent);
 
-    --deck-wash-a: color-mix(in srgb, #5eb7b0 18%, var(--background));
-    --deck-wash-b: color-mix(in srgb, var(--brand-purple) 26%, var(--background));
-    --deck-wash-c: color-mix(in srgb, #d4a0c2 14%, var(--background));
-    --deck-wash-d: color-mix(in srgb, #e0a36a 16%, var(--background));
+    --deck-grad-start: color-mix(in oklab, #6aabb0 22%, var(--background));
+    --deck-grad-mid: color-mix(in oklab, var(--brand-purple) 30%, var(--background));
+    --deck-grad-end: color-mix(in oklab, #d4a07a 20%, var(--background));
 }
 
 @layer base {
@@ -349,11 +347,10 @@
 
     .deck-gradient {
         background: linear-gradient(
-            148deg,
-            var(--deck-wash-a) 0%,
-            var(--deck-wash-b) 38%,
-            var(--deck-wash-c) 68%,
-            var(--deck-wash-d) 100%
+            135deg in oklab,
+            var(--deck-grad-start) 0%,
+            var(--deck-grad-mid) 52%,
+            var(--deck-grad-end) 100%
         );
     }
 
@@ -560,7 +557,7 @@
 
     .deck-path-item {
         font-family: var(--font-display);
-        font-size: 2.8cqw;
+        font-size: 3.2cqw;
         font-weight: 600;
         letter-spacing: -0.03em;
         line-height: 1;
