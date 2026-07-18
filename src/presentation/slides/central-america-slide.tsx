@@ -8,18 +8,18 @@ import {
 
 export function CentralAmericaSlide() {
   return (
-    <Slide variant="content" className="justify-between gap-0">
-      <div className="relative z-10">
+    <Slide variant="content" className="justify-between gap-[4cqh]">
+      <div className="relative z-10 max-w-[40ch]">
         <SlideKicker>Then the map filled in</SlideKicker>
-        <SlideTitle className="mt-[1.4cqh] max-w-[18ch]">
+        <SlideTitle className="mt-[1.2cqh] max-w-[18ch]">
           Guatemala, Panama, and now Costa Rica
         </SlideTitle>
-        <SlideSubtitle className="mt-[2cqh]">
+        <SlideSubtitle className="mt-[1.6cqh]">
           After El Salvador, Ambassadors and organizers showed up next door.
         </SlideSubtitle>
       </div>
 
-      <SlideMain className="relative z-10 mt-auto space-y-[3cqh]">
+      <SlideMain className="relative z-10 space-y-[2.4cqh]">
         <div className="deck-path">
           <span className="deck-path-item" data-muted="true">
             El Salvador
@@ -37,7 +37,7 @@ export function CentralAmericaSlide() {
           </span>
           <span className="deck-path-item">Costa Rica</span>
         </div>
-        <p className="deck-aside max-w-[34ch]">
+        <p className="deck-aside max-w-[40ch]">
           Same idea in every city: local communities, not one-off talks. A
           region that keeps learning in public.
         </p>

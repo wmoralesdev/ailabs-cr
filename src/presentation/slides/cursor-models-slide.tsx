@@ -22,26 +22,26 @@ const rows = [
 
 export function CursorModelsSlide() {
   return (
-    <Slide variant="content" className="justify-between gap-0">
-      <div className="relative z-10 max-w-[30ch]">
-        <SlideKicker>Models</SlideKicker>
-        <SlideTitle className="mt-[1.4cqh]">Pick the model for the job</SlideTitle>
-      </div>
+    <Slide variant="content" className="justify-center gap-0">
+      <div className="deck-split relative z-10 content-center">
+        <div className="flex h-full flex-col justify-center gap-[1.8cqh]">
+          <SlideKicker>Models</SlideKicker>
+          <SlideTitle>Pick the model for the job</SlideTitle>
+          <p className="deck-aside mt-[0.4cqh]">
+            Inside Cursor you switch models for speed, depth, or a longer agent
+            run — whatever the moment needs.
+          </p>
+        </div>
 
-      <SlideMain className="relative z-10 mt-auto">
-        <p className="deck-aside mb-[3cqh] max-w-[36ch]">
-          Inside Cursor you switch models for speed, depth, or a longer agent
-          run — whatever the moment needs.
-        </p>
-        <div className="deck-rail max-w-[52ch]">
+        <SlideMain className="deck-rail flex h-full flex-col justify-center">
           {rows.map((row) => (
             <div key={row.label} className="deck-rail-item grid-cols-[8cqw_1fr]">
               <span className="deck-rail-index tracking-tight">{row.label}</span>
               <p className="deck-rail-text text-muted-foreground">{row.text}</p>
             </div>
           ))}
-        </div>
-      </SlideMain>
+        </SlideMain>
+      </div>
     </Slide>
   )
 }

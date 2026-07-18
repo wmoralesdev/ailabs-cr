@@ -14,18 +14,16 @@ const steps = [
 export function CursorMobileSlide() {
   return (
     <Slide variant="content" className="justify-center gap-0">
-      <div className="deck-split relative z-10">
-        <div>
+      <div className="deck-split relative z-10 content-center">
+        <div className="flex h-full flex-col justify-center gap-[1.8cqh]">
           <SlideKicker>The newest piece</SlideKicker>
-          <SlideTitle className="mt-[1.6cqh] max-w-[10ch]">
-            Cursor on your phone
-          </SlideTitle>
-          <p className="deck-lead mt-[2.8cqh] max-w-[18ch] text-foreground">
+          <SlideTitle className="max-w-[10ch]">Cursor on your phone</SlideTitle>
+          <p className="deck-lead max-w-[20ch] text-foreground">
             Not typing on a tiny keyboard — starting and steering agents away
             from your desk.
           </p>
         </div>
-        <SlideMain className="deck-rail">
+        <SlideMain className="deck-rail flex h-full flex-col justify-center">
           {steps.map((step, index) => (
             <div key={step} className="deck-rail-item">
               <span className="deck-rail-index">
