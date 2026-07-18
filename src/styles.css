@@ -79,6 +79,11 @@
     --brand-border: #e8e4f0;
     --brand-border-dark: #44414f;
 
+    /* Deck atmosphere — one blended wash */
+    --deck-grad-start: color-mix(in srgb, #7eb8b4 40%, var(--background));
+    --deck-grad-mid: color-mix(in srgb, var(--brand-purple) 45%, var(--background));
+    --deck-grad-end: color-mix(in srgb, #d4a07a 38%, var(--background));
+
     /* Spacing / layout */
     --space-section-y: 4rem;
     --space-gutter: 1.5rem;
@@ -179,6 +184,10 @@
     --shadow-color: color-mix(in srgb, black 40%, transparent);
     --shadow-color-strong: color-mix(in srgb, black 55%, transparent);
     --shadow-glow: color-mix(in srgb, var(--brand-purple) 24%, transparent);
+
+    --deck-grad-start: color-mix(in srgb, #7eb8b4 28%, var(--background));
+    --deck-grad-mid: color-mix(in srgb, var(--brand-purple) 38%, var(--background));
+    --deck-grad-end: color-mix(in srgb, #d4a07a 26%, var(--background));
 }
 
 @layer base {
@@ -324,5 +333,253 @@
         animation: none !important;
         transition: none !important;
         transform: none !important;
+    }
+}
+
+/* Presentation deck — sizes scale with the 16:9 slide stage */
+@layer components {
+    .deck-slide {
+        container-type: size;
+        container-name: slide;
+        padding-inline: 6cqw;
+        padding-block: 6cqh;
+    }
+
+    .deck-gradient {
+        background: linear-gradient(
+            125deg,
+            var(--deck-grad-start) 0%,
+            var(--deck-grad-mid) 48%,
+            var(--deck-grad-end) 100%
+        );
+    }
+
+    .deck-kicker {
+        font-family: var(--font-sans);
+        font-size: 1.35cqw;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+    }
+
+    .deck-number {
+        font-size: 6.5cqw;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 0.9;
+        color: color-mix(in srgb, var(--brand-purple) 78%, var(--foreground));
+        margin-bottom: 1.6cqh;
+    }
+
+    /* Title: hero statement. Section: number + name. Content: shorter band title. */
+    .deck-slide[data-variant="title"] .deck-title {
+        font-size: 4.8cqw;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 0.98;
+        max-width: 18ch;
+    }
+
+    .deck-slide[data-variant="section"] .deck-title {
+        font-size: 4cqw;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+        max-width: 16ch;
+    }
+
+    .deck-slide[data-variant="content"] .deck-title {
+        font-size: 3cqw;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+        max-width: 24ch;
+    }
+
+    .deck-subtitle {
+        font-family: var(--font-sans);
+        font-size: 1.85cqw;
+        font-weight: 400;
+        line-height: 1.35;
+        max-width: 36ch;
+    }
+
+    .deck-body {
+        font-family: var(--font-sans);
+        font-size: 1.7cqw;
+        font-weight: 400;
+        line-height: 1.4;
+        max-width: 40ch;
+    }
+
+    .deck-body :where(p + p) {
+        margin-top: 1.2em;
+    }
+
+    .deck-body :where(ul) {
+        list-style: disc;
+        display: grid;
+        gap: 0.7em;
+        padding-left: 1.2em;
+    }
+
+    .deck-body :where(ol) {
+        list-style: decimal;
+        display: grid;
+        gap: 0.7em;
+        padding-left: 1.2em;
+    }
+
+    .deck-body :where(li) {
+        padding-left: 0.2em;
+    }
+
+    .deck-body :where(li::marker) {
+        color: color-mix(in srgb, var(--foreground) 45%, transparent);
+    }
+
+    .deck-footer {
+        font-family: var(--font-sans);
+        font-size: 1.15cqw;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    .deck-lead {
+        font-family: var(--font-display);
+        font-size: 2.2cqw;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        max-width: 28ch;
+    }
+
+    .deck-aside {
+        font-family: var(--font-sans);
+        font-size: 1.55cqw;
+        font-weight: 400;
+        line-height: 1.45;
+        color: var(--muted-foreground);
+        max-width: 34ch;
+    }
+
+    .deck-watermark {
+        position: absolute;
+        right: 4cqw;
+        top: 50%;
+        z-index: 0;
+        translate: 0 -50%;
+        font-family: var(--font-display);
+        font-size: 28cqw;
+        font-weight: 600;
+        letter-spacing: -0.06em;
+        line-height: 0.8;
+        color: color-mix(in srgb, var(--brand-purple) 22%, transparent);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .deck-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        gap: 4cqw;
+        height: 100%;
+        min-height: 0;
+    }
+
+    .deck-rail {
+        display: grid;
+        gap: 0;
+    }
+
+    .deck-rail-item {
+        display: grid;
+        grid-template-columns: 3.2cqw 1fr;
+        gap: 1.6cqw;
+        align-items: start;
+        padding-block: 1.8cqh;
+        border-top: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+    }
+
+    .deck-rail-item:last-child {
+        border-bottom: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+    }
+
+    .deck-rail-index {
+        font-family: var(--font-display);
+        font-size: 1.8cqw;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.2;
+        color: color-mix(in srgb, var(--brand-purple) 85%, var(--foreground));
+    }
+
+    .deck-rail-text {
+        font-family: var(--font-sans);
+        font-size: 1.75cqw;
+        font-weight: 400;
+        line-height: 1.35;
+    }
+
+    .deck-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4cqw;
+    }
+
+    .deck-column-label {
+        font-family: var(--font-sans);
+        font-size: 1.2cqw;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+        margin-bottom: 1.2cqh;
+    }
+
+    .deck-column-text {
+        font-family: var(--font-sans);
+        font-size: 1.65cqw;
+        font-weight: 400;
+        line-height: 1.35;
+        max-width: 16ch;
+    }
+
+    .deck-path {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 1.2cqw 1.6cqw;
+    }
+
+    .deck-path-item {
+        font-family: var(--font-display);
+        font-size: 3.2cqw;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+    }
+
+    .deck-path-item[data-muted="true"] {
+        color: var(--muted-foreground);
+        font-weight: 500;
+    }
+
+    .deck-path-sep {
+        font-family: var(--font-sans);
+        font-size: 1.8cqw;
+        color: color-mix(in srgb, var(--foreground) 30%, transparent);
+    }
+
+    .deck-callout {
+        border-left: 0.35cqw solid color-mix(in srgb, var(--brand-purple) 70%, transparent);
+        padding-left: 1.8cqw;
+        font-family: var(--font-sans);
+        font-size: 1.85cqw;
+        line-height: 1.4;
+        max-width: 28ch;
     }
 }
