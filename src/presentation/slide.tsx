@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils"
 type SlideProps = {
   children: ReactNode
   className?: string
-  /** Title slides center content; content slides use a top title band. */
-  variant?: "title" | "content"
+  /** title = hero; section = number + name; content = body slides */
+  variant?: "title" | "section" | "content"
 }
 
 export function Slide({
@@ -21,6 +21,7 @@ export function Slide({
       className={cn(
         "deck-slide relative flex h-full w-full flex-col overflow-hidden bg-background text-foreground",
         variant === "title" && "justify-between",
+        variant === "section" && "justify-center",
         variant === "content" && "justify-start gap-[3cqh]",
         className
       )}
@@ -28,6 +29,18 @@ export function Slide({
       <div aria-hidden className="deck-gradient pointer-events-none absolute inset-0" />
       {children}
     </section>
+  )
+}
+
+export function SlideNumber({
+  children,
+  className,
+  ...props
+}: ComponentProps<"p">) {
+  return (
+    <p className={cn("deck-number font-display", className)} {...props}>
+      {children}
+    </p>
   )
 }
 

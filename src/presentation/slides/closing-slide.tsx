@@ -12,9 +12,10 @@ export function ClosingSlide() {
     <Slide variant="title">
       <SlideMain className="mt-auto mb-auto">
         <BrandMark className="mb-[4cqh]" />
-        <SlideTitle>Let’s build from Central America</SlideTitle>
+        <SlideTitle>The story keeps growing here</SlideTitle>
         <SlideSubtitle className="mt-[2.4cqh]">
-          Open Cursor. Pick a real problem. Ship the next slice tonight.
+          Community started it. Practice spreads it. Mobile and Grok open the
+          next chapter — from Central America.
         </SlideSubtitle>
       </SlideMain>
 

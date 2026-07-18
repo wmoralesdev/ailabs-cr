@@ -381,13 +381,30 @@
         color: var(--muted-foreground);
     }
 
-    /* Title slide: one large statement. Content slide: shorter band title. */
+    .deck-number {
+        font-size: 7.5cqw;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 0.9;
+        color: color-mix(in srgb, var(--brand-purple) 78%, var(--foreground));
+        margin-bottom: 2.4cqh;
+    }
+
+    /* Title: hero statement. Section: number + name. Content: shorter band title. */
     .deck-slide[data-variant="title"] .deck-title {
         font-size: 5.2cqw;
         font-weight: 600;
         letter-spacing: -0.03em;
         line-height: 0.98;
         max-width: 18ch;
+    }
+
+    .deck-slide[data-variant="section"] .deck-title {
+        font-size: 4.4cqw;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        max-width: 14ch;
     }
 
     .deck-slide[data-variant="content"] .deck-title {

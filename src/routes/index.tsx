@@ -1,14 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router"
 
 import { PresentationShell } from "@/presentation/presentation-shell"
-import { AgendaSlide } from "@/presentation/slides/agenda-slide"
+import { CentralAmericaSlide } from "@/presentation/slides/central-america-slide"
 import { ClosingSlide } from "@/presentation/slides/closing-slide"
-import { CommunitySlide } from "@/presentation/slides/community-slide"
-import { PracticeSlide } from "@/presentation/slides/practice-slide"
-import { RegionSlide } from "@/presentation/slides/region-slide"
+import { CommunityNetworkSlide } from "@/presentation/slides/community-network-slide"
+import { CommunitySparkSlide } from "@/presentation/slides/community-spark-slide"
+import { CursorGrokSlide } from "@/presentation/slides/cursor-grok-slide"
+import { CursorMobileSlide } from "@/presentation/slides/cursor-mobile-slide"
+import { ElSalvadorSlide } from "@/presentation/slides/el-salvador-slide"
+import { Section01Slide } from "@/presentation/slides/section-01-slide"
+import { Section02Slide } from "@/presentation/slides/section-02-slide"
+import { Section03Slide } from "@/presentation/slides/section-03-slide"
+import { Section04Slide } from "@/presentation/slides/section-04-slide"
 import { TitleSlide } from "@/presentation/slides/title-slide"
-import { WhatIsCursorSlide } from "@/presentation/slides/what-is-cursor-slide"
-import { WhyNowSlide } from "@/presentation/slides/why-now-slide"
+import { UseCaseLearningSlide } from "@/presentation/slides/use-case-learning-slide"
+import { UseCaseSoloSlide } from "@/presentation/slides/use-case-solo-slide"
+import { UseCaseTeamsSlide } from "@/presentation/slides/use-case-teams-slide"
 
 export const Route = createFileRoute("/")({ component: App })
 
@@ -17,12 +24,19 @@ function App() {
     <PresentationShell
       slides={[
         <TitleSlide key="title" />,
-        <AgendaSlide key="agenda" />,
-        <WhyNowSlide key="why-now" />,
-        <WhatIsCursorSlide key="what-is-cursor" />,
-        <RegionSlide key="region" />,
-        <PracticeSlide key="practice" />,
-        <CommunitySlide key="community" />,
+        <Section01Slide key="section-01" />,
+        <CommunitySparkSlide key="community-spark" />,
+        <CommunityNetworkSlide key="community-network" />,
+        <Section02Slide key="section-02" />,
+        <ElSalvadorSlide key="el-salvador" />,
+        <CentralAmericaSlide key="central-america" />,
+        <Section03Slide key="section-03" />,
+        <UseCaseSoloSlide key="use-case-solo" />,
+        <UseCaseTeamsSlide key="use-case-teams" />,
+        <UseCaseLearningSlide key="use-case-learning" />,
+        <Section04Slide key="section-04" />,
+        <CursorMobileSlide key="cursor-mobile" />,
+        <CursorGrokSlide key="cursor-grok" />,
         <ClosingSlide key="closing" />,
       ]}
     />
